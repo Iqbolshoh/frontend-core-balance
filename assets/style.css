@@ -1,3 +1,31 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8faff;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #555555;
+    --text-light: #888888;
+    --border-color: #f0f2f8;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+    --gradient-start: #4f6af5;
+    --gradient-end: #7c8ff7;
+    --hero-overlay: rgba(0, 0, 0, 0.3);
+    --transition: 0.4s ease;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0d1428;
+    --bg-secondary: #141c36;
+    --bg-card: #1a2444;
+    --text-primary: #f0f4ff;
+    --text-secondary: #b6c4e8;
+    --text-light: #7a88a8;
+    --border-color: #2a3a6a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --hero-overlay: rgba(0, 0, 0, 0.6);
+}
+
 /* ===== GLOBAL ===== */
 * {
     margin: 0;
@@ -11,10 +39,11 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #1a1a2e;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .container {
@@ -25,6 +54,8 @@ body {
 
 .section {
     padding: 100px 0;
+    background-color: var(--bg-primary);
+    transition: background-color var(--transition);
 }
 
 .section-header {
@@ -34,8 +65,8 @@ body {
 
 .section-tag {
     display: inline-block;
-    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
-    color: #4f6af5;
+    background: var(--bg-secondary);
+    color: var(--gradient-start);
     padding: 6px 20px;
     border-radius: 50px;
     font-size: 14px;
@@ -53,7 +84,7 @@ body {
 }
 
 .section-title span {
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -61,20 +92,21 @@ body {
 
 .section-sub {
     font-size: 18px;
-    color: #666;
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-primary);
     backdrop-filter: blur(10px);
     padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition), border-color var(--transition);
 }
 
 .navbar {
@@ -86,11 +118,11 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 800;
-    color: #1a1a2e;
+    color: var(--text-primary);
 }
 
 .logo span {
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -99,6 +131,7 @@ header {
 .logo i {
     margin-right: 8px;
     font-size: 24px;
+    color: var(--gradient-start);
 }
 
 .nav-links {
@@ -110,10 +143,10 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: #1a1a2e;
+    color: var(--text-primary);
     font-weight: 500;
     font-size: 15px;
-    transition: 0.3s;
+    transition: color var(--transition);
     position: relative;
 }
 
@@ -124,8 +157,8 @@ header {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
-    transition: 0.3s;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    transition: width var(--transition);
 }
 
 .nav-links a:hover::after {
@@ -133,7 +166,7 @@ header {
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white !important;
     padding: 10px 28px;
     border-radius: 50px;
@@ -149,19 +182,76 @@ header {
     box-shadow: 0 10px 30px rgba(79, 106, 245, 0.3);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    background: var(--gradient-start);
+    color: white;
+    border-color: var(--gradient-start);
+}
+
 .hamburger {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #1a1a2e;
+    color: var(--text-primary);
 }
 
 /* ===== HERO ===== */
 .hero {
-    background: linear-gradient(135deg, #f8faff, #eef2ff);
+    background: var(--bg-secondary);
     padding: 80px 0 100px;
     position: relative;
     overflow: hidden;
+    transition: background-color var(--transition);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hero-overlay);
+    z-index: 1;
+}
+
+/* Hero Background Image with Blur */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop&crop=center') center/cover no-repeat;
+    filter: blur(8px) brightness(0.5);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-wrapper {
@@ -178,13 +268,13 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: white;
+    background: var(--bg-card);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
-    color: #4f6af5;
-    box-shadow: 0 4px 15px rgba(79, 106, 245, 0.1);
+    color: var(--gradient-start);
+    box-shadow: 0 4px 15px var(--shadow-color);
     margin-bottom: 24px;
 }
 
@@ -193,10 +283,11 @@ header {
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .hero-content h1 span {
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -204,7 +295,7 @@ header {
 
 .hero-content p {
     font-size: 18px;
-    color: #555;
+    color: rgba(255, 255, 255, 0.9);
     max-width: 500px;
     margin-bottom: 32px;
     line-height: 1.8;
@@ -222,14 +313,14 @@ header {
     align-items: center;
     gap: 10px;
     padding: 16px 36px;
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     border: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all var(--transition);
     text-decoration: none;
 }
 
@@ -243,21 +334,21 @@ header {
     align-items: center;
     gap: 10px;
     padding: 16px 36px;
-    background: transparent;
-    color: #1a1a2e;
-    border: 2px solid #d0d9f0;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all var(--transition);
     text-decoration: none;
 }
 
 .btn-outline:hover {
-    border-color: #4f6af5;
-    color: #4f6af5;
-    background: rgba(79, 106, 245, 0.05);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--gradient-start);
 }
 
 .hero-stats {
@@ -273,12 +364,12 @@ header {
 .stat-number {
     font-size: 28px;
     font-weight: 800;
-    color: #1a1a2e;
+    color: #ffffff;
 }
 
 .stat-label {
     font-size: 14px;
-    color: #888;
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
 }
 
@@ -302,7 +393,7 @@ header {
 .center-icon {
     width: 120px;
     height: 120px;
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -317,15 +408,16 @@ header {
     position: absolute;
     width: 70px;
     height: 70px;
-    background: white;
+    background: var(--bg-card);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: #4f6af5;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    color: var(--gradient-start);
+    box-shadow: 0 10px 40px var(--shadow-color);
     animation: float 3s ease-in-out infinite;
+    transition: background var(--transition), box-shadow var(--transition);
 }
 
 .icon-1 { top: 0; left: 30px; animation-delay: 0s; }
@@ -340,7 +432,7 @@ header {
 
 /* ===== SERVICES ===== */
 .services {
-    background: #ffffff;
+    background-color: var(--bg-primary);
 }
 
 .services-grid {
@@ -350,11 +442,11 @@ header {
 }
 
 .service-card {
-    background: white;
+    background: var(--bg-card);
     padding: 40px 30px;
     border-radius: 24px;
-    border: 1px solid #f0f2f8;
-    transition: 0.4s;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
     position: relative;
     overflow: hidden;
 }
@@ -366,9 +458,9 @@ header {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     transform: scaleX(0);
-    transition: 0.4s;
+    transition: transform var(--transition);
 }
 
 .service-card:hover::before {
@@ -377,20 +469,20 @@ header {
 
 .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 20px 60px var(--shadow-color);
     border-color: transparent;
 }
 
 .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    background: var(--bg-secondary);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: #4f6af5;
+    color: var(--gradient-start);
     margin-bottom: 20px;
 }
 
@@ -401,18 +493,18 @@ header {
 }
 
 .service-card p {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 20px;
 }
 
 .service-link {
-    color: #4f6af5;
+    color: var(--gradient-start);
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: 0.3s;
+    transition: gap var(--transition);
 }
 
 .service-link:hover {
@@ -421,7 +513,7 @@ header {
 
 /* ===== ABOUT ===== */
 .about {
-    background: linear-gradient(135deg, #f8faff, #f0f4ff);
+    background-color: var(--bg-secondary);
 }
 
 .about-wrapper {
@@ -441,22 +533,22 @@ header {
 }
 
 .about-icon-item {
-    background: white;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-    transition: 0.3s;
-    border: 1px solid #f0f2f8;
+    transition: all var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .about-icon-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .about-icon-item i {
     font-size: 40px;
-    color: #4f6af5;
+    color: var(--gradient-start);
     margin-bottom: 10px;
 }
 
@@ -477,14 +569,14 @@ header {
 }
 
 .about-content h2 span {
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .about-content p {
-    color: #555;
+    color: var(--text-secondary);
     font-size: 17px;
     line-height: 1.8;
     margin-bottom: 24px;
@@ -504,13 +596,13 @@ header {
 }
 
 .about-features li i {
-    color: #4f6af5;
+    color: var(--gradient-start);
     font-size: 20px;
 }
 
 /* ===== TEAM ===== */
 .team {
-    background: #ffffff;
+    background-color: var(--bg-primary);
 }
 
 .team-grid {
@@ -520,30 +612,30 @@ header {
 }
 
 .team-member {
-    background: white;
+    background: var(--bg-card);
     padding: 30px 20px;
     border-radius: 24px;
     text-align: center;
-    border: 1px solid #f0f2f8;
-    transition: 0.4s;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
 }
 
 .team-member:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 20px 60px var(--shadow-color);
     border-color: transparent;
 }
 
 .member-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    background: var(--bg-secondary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
-    color: #4f6af5;
+    color: var(--gradient-start);
     margin: 0 auto 16px;
 }
 
@@ -554,7 +646,7 @@ header {
 }
 
 .role {
-    color: #4f6af5;
+    color: var(--gradient-start);
     font-weight: 600;
     font-size: 14px;
     display: block;
@@ -562,7 +654,7 @@ header {
 }
 
 .team-member p {
-    color: #888;
+    color: var(--text-light);
     font-size: 14px;
     margin-bottom: 16px;
 }
@@ -576,24 +668,24 @@ header {
 .social-icons a {
     width: 36px;
     height: 36px;
-    background: #f0f2f8;
+    background: var(--bg-secondary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #1a1a2e;
-    transition: 0.3s;
+    color: var(--text-primary);
+    transition: all var(--transition);
     text-decoration: none;
 }
 
 .social-icons a:hover {
-    background: #4f6af5;
+    background: var(--gradient-start);
     color: white;
 }
 
 /* ===== CONTACT ===== */
 .contact {
-    background: linear-gradient(135deg, #f8faff, #f0f4ff);
+    background-color: var(--bg-secondary);
 }
 
 .contact-wrapper {
@@ -609,50 +701,50 @@ header {
 }
 
 .contact-card {
-    background: white;
+    background: var(--bg-card);
     padding: 24px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 16px;
-    border: 1px solid #f0f2f8;
-    transition: 0.3s;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
 }
 
 .contact-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    background: var(--bg-secondary);
     border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: #4f6af5;
+    color: var(--gradient-start);
     flex-shrink: 0;
 }
 
 .contact-card h4 {
     font-size: 14px;
-    color: #888;
+    color: var(--text-light);
     font-weight: 500;
 }
 
 .contact-card p {
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--text-primary);
 }
 
 .contact-form {
-    background: white;
+    background: var(--bg-card);
     padding: 40px;
     border-radius: 24px;
-    border: 1px solid #f0f2f8;
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -664,19 +756,20 @@ header {
 .form-group textarea {
     width: 100%;
     padding: 16px 20px 16px 48px;
-    border: 2px solid #f0f2f8;
+    border: 2px solid var(--border-color);
     border-radius: 14px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    transition: 0.3s;
-    background: #fafbff;
+    transition: all var(--transition);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #4f6af5;
-    background: white;
+    border-color: var(--gradient-start);
+    background: var(--bg-primary);
     box-shadow: 0 0 0 4px rgba(79, 106, 245, 0.08);
 }
 
@@ -690,8 +783,8 @@ header {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    color: #aaa;
-    transition: 0.3s;
+    color: var(--text-light);
+    transition: color var(--transition);
 }
 
 .form-group textarea + i {
@@ -701,20 +794,20 @@ header {
 
 .form-group input:focus + i,
 .form-group textarea:focus + i {
-    color: #4f6af5;
+    color: var(--gradient-start);
 }
 
 .contact-form button {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #4f6af5, #7c8ff7);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     border: none;
     border-radius: 14px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -753,12 +846,12 @@ footer {
     max-width: 300px;
 }
 
-.social-links {
+.footer-brand .social-links {
     display: flex;
     gap: 12px;
 }
 
-.social-links a {
+.footer-brand .social-links a {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.06);
@@ -767,12 +860,12 @@ footer {
     justify-content: center;
     align-items: center;
     color: #b6c4e8;
-    transition: 0.3s;
+    transition: all var(--transition);
     text-decoration: none;
 }
 
-.social-links a:hover {
-    background: #4f6af5;
+.footer-brand .social-links a:hover {
+    background: var(--gradient-start);
     color: white;
     transform: translateY(-3px);
 }
@@ -795,7 +888,7 @@ footer {
     color: #b6c4e8;
     text-decoration: none;
     font-size: 14px;
-    transition: 0.3s;
+    transition: color var(--transition);
 }
 
 .footer-links ul li a:hover {
@@ -892,7 +985,7 @@ footer {
     .footer-brand p {
         margin: 16px auto;
     }
-    .social-links {
+    .footer-brand .social-links {
         justify-content: center;
     }
     .hero-stats {
@@ -902,5 +995,8 @@ footer {
     }
     .contact-form {
         padding: 24px;
+    }
+    .nav-actions {
+        gap: 12px;
     }
 }
