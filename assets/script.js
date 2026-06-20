@@ -1,3 +1,27 @@
+// ===== DARK MODE TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+});
+
 // ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -25,26 +49,26 @@ contactForm.addEventListener('submit', (e) => {
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !message) {
-        alert('Iltimos, ism, email va xabar maydonlarini to\'ldiring.');
+        alert('Please fill in name, email, and message fields.');
         return;
     }
 
     if (!email.includes('@') || !email.includes('.')) {
-        alert('Iltimos, to\'g\'ri email manzil kiriting.');
+        alert('Please enter a valid email address.');
         return;
     }
 
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
 
     setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Xabar yuborildi!';
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         submitBtn.style.background = 'linear-gradient(135deg, #2e7d32, #43a047)';
 
         contactForm.reset();
 
         setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Xabarni yuborish';
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
             submitBtn.style.background = 'linear-gradient(135deg, #4f6af5, #7c8ff7)';
             submitBtn.disabled = false;
         }, 3000);
@@ -67,7 +91,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== INTERSECTION OBSERVER (Animatsiya uchun) =====
+// ===== INTERSECTION OBSERVER (Animations) =====
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -89,4 +113,4 @@ document.querySelectorAll('.service-card, .team-member, .contact-card').forEach(
     observer.observe(el);
 });
 
-console.log('✅ Firma sayti muvaffaqiyatli yuklandi!');
+console.log('✅ Company website loaded successfully!');
