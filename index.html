@@ -1,70 +1,76 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bizning Firma | Professional Xizmatlar</title>
+    <title>Company | Professional Services</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- CSS fayl -->
-    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ========== HEADER ========== -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-cube" style="color: #4f6af5;"></i>
-                    Firma<span>.</span>
+                    <i class="fas fa-cube"></i>
+                    Company<span>.</span>
                 </div>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#services">Xizmatlar</a></li>
-                    <li><a href="#about">Biz haqimizda</a></li>
-                    <li><a href="#team">Jamoa</a></li>
-                    <li><a href="#contact" class="nav-cta">Bog'lanish</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
         <div class="container hero-wrapper">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-rocket"></i> 10+ yillik tajriba
+                    <i class="fas fa-rocket"></i> 10+ Years Experience
                 </div>
-                <h1>Biznesingizni <br/><span>yangi bosqichga</span> olib chiqamiz</h1>
-                <p>Innovatsion texnologiyalar va professional yondashuv bilan sizning maqsadlaringizga erishishda ishonchli hamkor.</p>
+                <h1>Take Your <br/><span>Business</span> to the Next Level</h1>
+                <p>Innovative technology and professional approach to help you achieve your goals with confidence.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">
-                        <i class="fas fa-arrow-right"></i> Xizmat olish
+                        <i class="fas fa-arrow-right"></i> Get Started
                     </a>
                     <a href="#about" class="btn-outline">
-                        <i class="fas fa-play-circle"></i> Ko'proq bilish
+                        <i class="fas fa-play-circle"></i> Learn More
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-number">150+</span>
-                        <span class="stat-label">Mijozlar</span>
+                        <span class="stat-label">Clients</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">98%</span>
-                        <span class="stat-label">Mamnuniyat</span>
+                        <span class="stat-label">Satisfaction</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">24/7</span>
-                        <span class="stat-label">Qo'llab-quvvatlash</span>
+                        <span class="stat-label">Support</span>
                     </div>
                 </div>
             </div>
@@ -90,79 +96,79 @@
         </div>
     </section>
 
-    <!-- ========== SERVICES ========== -->
+    <!-- ===== SERVICES ===== -->
     <section class="section services" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Xizmatlar</span>
-                <h2 class="section-title">Nima <span>qilamiz</span></h2>
-                <p class="section-sub">Bizning keng ko'lamli xizmatlarimiz sizning barcha ehtiyojlaringizni qoplaydi</p>
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">What We <span>Do</span></h2>
+                <p class="section-sub">Comprehensive solutions tailored to meet all your business needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Veb-ishlab chiqish</h3>
-                    <p>Zamonaviy, tezkor va responsive veb-saytlar, e-commerce va maxsus tizimlar</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Web Development</h3>
+                    <p>Modern, fast, and responsive websites, e-commerce, and custom systems</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-apple-alt"></i>
                     </div>
-                    <h3>Mobil ilovalar</h3>
-                    <p>iOS va Android uchun intuitiv, kuchli va yuqori sifatli mobil yechimlar</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Mobile Apps</h3>
+                    <p>Intuitive, powerful, and high-quality mobile solutions for iOS and Android</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3>Bulutli xizmatlar</h3>
-                    <p>Xavfsiz, moslashuvchan va yuqori unumli bulutli infrastruktura</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Cloud Services</h3>
+                    <p>Secure, scalable, and high-performance cloud infrastructure</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3>Raqamli marketing</h3>
-                    <p>SEO, SMM, kontekstli reklama va brending strategiyalari</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Digital Marketing</h3>
+                    <p>SEO, SMM, contextual advertising, and branding strategies</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Kiberxavfsizlik</h3>
-                    <p>Ma'lumotlaringizni himoya qilish va xavfsizlik auditi</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Cybersecurity</h3>
+                    <p>Data protection, security audits, and vulnerability assessment</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Texnik qo'llab-quvvatlash</h3>
-                    <p>24/7 professional yordam va texnik xizmat ko'rsatish</p>
-                    <a href="#" class="service-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    <h3>Tech Support</h3>
+                    <p>24/7 professional assistance and technical support services</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== ABOUT ========== -->
+    <!-- ===== ABOUT ===== -->
     <section class="section about" id="about">
         <div class="container about-wrapper">
             <div class="about-visual">
                 <div class="about-icon-grid">
                     <div class="about-icon-item">
                         <i class="fas fa-users"></i>
-                        <span>Jamoa</span>
+                        <span>Team</span>
                     </div>
                     <div class="about-icon-item">
                         <i class="fas fa-trophy"></i>
-                        <span>Mukofotlar</span>
+                        <span>Awards</span>
                     </div>
                     <div class="about-icon-item">
                         <i class="fas fa-globe"></i>
@@ -170,34 +176,34 @@
                     </div>
                     <div class="about-icon-item">
                         <i class="fas fa-handshake"></i>
-                        <span>Ishonch</span>
+                        <span>Trust</span>
                     </div>
                 </div>
             </div>
             <div class="about-content">
-                <span class="section-tag">Biz haqimizda</span>
-                <h2>Nima uchun <span>biz?</span></h2>
-                <p>Biz 10 yildan ortiq tajribaga ega mutaxassislar jamoasi sifatida mijozlarimizga eng yaxshi yechimlarni taqdim etamiz.</p>
+                <span class="section-tag">About Us</span>
+                <h2>Why <span>Choose Us?</span></h2>
+                <p>With over 10 years of experience, our team of experts delivers the best solutions to our clients worldwide.</p>
                 <ul class="about-features">
-                    <li><i class="fas fa-check-circle"></i> Professional va malakali jamoa</li>
-                    <li><i class="fas fa-check-circle"></i> Zamonaviy texnologiyalar</li>
-                    <li><i class="fas fa-check-circle"></i> Shaxsiy yondashuv</li>
-                    <li><i class="fas fa-check-circle"></i> 100% natija kafolati</li>
+                    <li><i class="fas fa-check-circle"></i> Professional & qualified team</li>
+                    <li><i class="fas fa-check-circle"></i> Modern technologies</li>
+                    <li><i class="fas fa-check-circle"></i> Personalized approach</li>
+                    <li><i class="fas fa-check-circle"></i> 100% result guarantee</li>
                 </ul>
                 <a href="#contact" class="btn-primary">
-                    <i class="fas fa-phone"></i> Bog'lanish
+                    <i class="fas fa-phone"></i> Contact Us
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ========== TEAM ========== -->
+    <!-- ===== TEAM ===== -->
     <section class="section team" id="team">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Jamoa</span>
-                <h2 class="section-title">Bizning <span>mutaxassislar</span></h2>
-                <p class="section-sub">Sizning muvaffaqiyatingiz uchun birga ishlaydigan tajribali jamoamiz</p>
+                <span class="section-tag">Team</span>
+                <h2 class="section-title">Our <span>Experts</span></h2>
+                <p class="section-sub">Experienced professionals working together for your success</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
@@ -205,8 +211,8 @@
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h4>Bahodir Karimov</h4>
-                    <span class="role">CEO & Asoschi</span>
-                    <p>10+ yillik boshqaruv tajribasi</p>
+                    <span class="role">CEO & Founder</span>
+                    <p>10+ years leadership experience</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-telegram"></i></a>
@@ -217,8 +223,8 @@
                         <i class="fas fa-user-graduate"></i>
                     </div>
                     <h4>Dilnoza Abdullaeva</h4>
-                    <span class="role">Bosh dasturchi</span>
-                    <p>Full-stack muhandis, 8 yil</p>
+                    <span class="role">Lead Developer</span>
+                    <p>Full-stack engineer, 8 years</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-telegram"></i></a>
@@ -229,8 +235,8 @@
                         <i class="fas fa-user-astronaut"></i>
                     </div>
                     <h4>Jasur Nematov</h4>
-                    <span class="role">Dizayner</span>
-                    <p>UX/UI va grafik dizayn, 6 yil</p>
+                    <span class="role">Designer</span>
+                    <p>UX/UI & graphic design, 6 years</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-telegram"></i></a>
@@ -241,8 +247,8 @@
                         <i class="fas fa-user-nurse"></i>
                     </div>
                     <h4>Gulnora Azimova</h4>
-                    <span class="role">Marketing bo'yicha</span>
-                    <p>Raqamli strategiya, 7 yil</p>
+                    <span class="role">Marketing Head</span>
+                    <p>Digital strategy, 7 years</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-telegram"></i></a>
@@ -252,13 +258,13 @@
         </div>
     </section>
 
-    <!-- ========== CONTACT ========== -->
+    <!-- ===== CONTACT ===== -->
     <section class="section contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Aloqa</span>
-                <h2 class="section-title">Biz bilan <span>bog'laning</span></h2>
-                <p class="section-sub">Savollaringiz bormi? Biz sizga yordam berishga tayyormiz</p>
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <p class="section-sub">Have questions? We're here to help you</p>
             </div>
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -267,7 +273,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h4>Telefon</h4>
+                            <h4>Phone</h4>
                             <p>+998 90 123 45 67</p>
                         </div>
                     </div>
@@ -277,7 +283,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>info@firma.uz</p>
+                            <p>info@company.uz</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -285,8 +291,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h4>Manzil</h4>
-                            <p>Toshkent, Amir Temur 15</p>
+                            <h4>Address</h4>
+                            <p>Tashkent, Amir Temur 15</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -294,46 +300,46 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div>
-                            <h4>Ish vaqti</h4>
-                            <p>Du-Shan 9:00 - 18:00</p>
+                            <h4>Working Hours</h4>
+                            <p>Mon-Fri 9:00 - 18:00</p>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Ismingiz" id="name" required />
+                        <input type="text" placeholder="Your Name" id="name" required />
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email manzilingiz" id="email" required />
+                        <input type="email" placeholder="Your Email" id="email" required />
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Mavzu" id="subject" />
+                        <input type="text" placeholder="Subject" id="subject" />
                         <i class="fas fa-tag"></i>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Xabaringiz..." id="message" required></textarea>
+                        <textarea placeholder="Your Message..." id="message" required></textarea>
                         <i class="fas fa-pencil-alt"></i>
                     </div>
                     <button type="submit" id="submitBtn">
-                        <i class="fas fa-paper-plane"></i> Xabarni yuborish
+                        <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <i class="fas fa-cube" style="color: #6c84ff;"></i>
-                        Firma<span>.</span>
+                        <i class="fas fa-cube"></i>
+                        Company<span>.</span>
                     </div>
-                    <p>Biz sizning biznesingizni raqamli dunyoda yetakchi qilish uchun keldik.</p>
+                    <p>We're here to take your business to the next level in the digital world.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-telegram"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -343,40 +349,39 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Xizmatlar</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Veb-ishlab chiqish</a></li>
-                        <li><a href="#">Mobil ilovalar</a></li>
-                        <li><a href="#">Bulutli xizmatlar</a></li>
-                        <li><a href="#">Raqamli marketing</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Cloud Services</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Kompaniya</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="#about">Biz haqimizda</a></li>
-                        <li><a href="#team">Jamoa</a></li>
-                        <li><a href="#">Karyera</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Qo'llab-quvvatlash</h4>
+                    <h4>Support</h4>
                     <ul>
-                        <li><a href="#contact">Aloqa</a></li>
-                        <li><a href="#">Yordam markazi</a></li>
-                        <li><a href="#">Shartlar</a></li>
-                        <li><a href="#">Maxfiylik siyosati</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Firma.uz. Barcha huquqlar himoyalangan.</p>
+                <p>&copy; 2026 Company.uz. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript fayl -->
-    <script src="./assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
