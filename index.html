@@ -11,50 +11,33 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ===== HEADER - CHOTKI ===== -->
-    <header class="header-premium">
-        <div class="header-top-bar">
-            <div class="container header-top-content">
-                <div class="header-contact">
-                    <a href="tel:+998901234567"><i class="fas fa-phone-alt"></i> +998 90 123 45 67</a>
-                    <a href="mailto:info@company.uz"><i class="fas fa-envelope"></i> info@company.uz</a>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    Company<span>.</span>
                 </div>
-                <div class="header-social">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <nav class="navbar">
-                    <div class="logo">
-                        <i class="fas fa-cube"></i>
-                        Company<span>.</span>
-                    </div>
-                    <ul class="nav-links" id="navLinks">
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact" class="nav-cta">Contact</a></li>
-                    </ul>
-                    <div class="nav-actions">
-                        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <div class="hamburger" id="hamburger">
-                            <i class="fas fa-bars"></i>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            </nav>
         </div>
     </header>
 
@@ -347,91 +330,58 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER - CHOTKI ===== -->
-    <footer class="footer-premium">
-        <!-- Footer Top: Newsletter -->
-        <div class="footer-newsletter">
-            <div class="container newsletter-wrapper">
-                <div class="newsletter-content">
-                    <h3><i class="fas fa-envelope-open-text"></i> Subscribe to Our Newsletter</h3>
-                    <p>Get the latest updates and offers directly to your inbox</p>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-cube"></i>
+                        Company<span>.</span>
+                    </div>
+                    <p>We're here to take your business to the next level in the digital world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email address" required />
-                    <button type="submit">
-                        <i class="fas fa-paper-plane"></i> Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Footer Main -->
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div class="logo">
-                            <i class="fas fa-cube"></i>
-                            Company<span>.</span>
-                        </div>
-                        <p>We're here to take your business to the next level in the digital world with innovative solutions.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-telegram"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-links">
-                        <h4><i class="fas fa-cogs"></i> Services</h4>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">Mobile Apps</a></li>
-                            <li><a href="#">Cloud Services</a></li>
-                            <li><a href="#">Digital Marketing</a></li>
-                            <li><a href="#">Cybersecurity</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links">
-                        <h4><i class="fas fa-building"></i> Company</h4>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#team">Our Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Partners</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links">
-                        <h4><i class="fas fa-headset"></i> Support</h4>
-                        <ul>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Cloud Services</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom-premium">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2026 Company.uz. All rights reserved. <span class="separator">|</span> Made with <i class="fas fa-heart" style="color: #ff4757;"></i> by Company Team</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookies</a>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Company.uz. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="./assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
