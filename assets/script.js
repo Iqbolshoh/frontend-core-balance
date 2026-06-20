@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check saved theme
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
@@ -74,6 +73,37 @@ contactForm.addEventListener('submit', (e) => {
         }, 3000);
     }, 2000);
 });
+
+// ===== NEWSLETTER FORM =====
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('input');
+        const btn = newsletterForm.querySelector('button');
+        const email = input.value.trim();
+
+        if (!email || !email.includes('@') || !email.includes('.')) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+            btn.style.background = 'linear-gradient(135deg, #2e7d32, #43a047)';
+            input.value = '';
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Subscribe';
+                btn.style.background = 'linear-gradient(135deg, #4f6af5, #7c8ff7)';
+                btn.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
+}
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
